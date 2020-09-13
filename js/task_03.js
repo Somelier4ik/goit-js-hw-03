@@ -1,11 +1,14 @@
 'use strict';
 const findBestEmployee = function (obj) {
   let bestEmployee = 0;
+  let nameBestEmployee = '';
   for (const employee in obj) {
     if (obj[employee] > bestEmployee) {
-      bestEmployee += obj[employee];
+      nameBestEmployee = employee;
+      bestEmployee = obj[employee];
     }
   }
+  return nameBestEmployee;
 };
 
 // Объекты и ожидаемый результат
@@ -15,7 +18,7 @@ const developers = {
   helen: 1,
   lorence: 99,
 };
-//console.log(findBestEmployee(developers));
+console.log(findBestEmployee(developers));
 // 'lorence'
 
 const supports = {
@@ -23,7 +26,7 @@ const supports = {
   mango: 17,
   ajax: 4,
 };
-//console.log(findBestEmployee(supports));
+console.log(findBestEmployee(supports));
 // 'mango'
 
 const sellers = {
@@ -32,5 +35,5 @@ const sellers = {
   kiwi: 19,
   chelsy: 38,
 };
-//console.log(findBestEmployee(sellers));
+console.log(findBestEmployee(sellers));
 // 'lux'
