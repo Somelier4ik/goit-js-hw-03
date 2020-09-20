@@ -1,10 +1,13 @@
 function getAllPropValues(array, prop) {
   'use strict';
   let result = [];
-    for (let i = 0,  obj of array) {
-      if (array.include())
-    result.push(obj[prop]);
+
+  for (const object of array) {
+    if (object.hasOwnProperty(prop)) {
+      result.push(object[prop]);
+    }
   }
+
   return result;
 }
 
